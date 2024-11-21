@@ -15,7 +15,7 @@ class ProductController extends Controller
        
         $products = Product::all(); 
         // dd($products);
-        return view('index', compact('products'));
+        return view('welcome', compact('products'));
         
     }
 
@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductController extends Controller
         
         Product::create($request->all());
 
-        return redirect('/')->route('products.index')->with([
+        return redirect('/')->route('welcome')->with([
             'success' => 'Prodotto aggiunto con successo.'
             
         ]);

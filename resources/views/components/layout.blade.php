@@ -11,7 +11,7 @@
 <body class="bg-black text-white">
     <x-navbar />
     <main>
-        <h1 class="display-1 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 mt-5 text-center">Ssc Bari Post</h1>
+        <h1 class="display-1 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 mt-5 fw-bold text-danger text-center">🔥 Black Friday</h1>
 
         <!-- Barra di ricerca in stile Edge -->
         <form action="{{ route('products.store') }}" method="GET" class="d-flex justify-content-center my-3" role="search">
@@ -29,9 +29,9 @@
         </form>
 
         <div class="min-vh-100">
-            {{ $slot }}
             <x-hero />
-            <x-countdown />
+        {{ $slot }}
+            
             <x-special-offers />
             <x-reviews />
         </div>

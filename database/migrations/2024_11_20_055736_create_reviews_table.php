@@ -9,17 +9,29 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->unsignedInteger('user_id');
-            $table->string('content');
-            $table->integer('rating');
+            $table->id(); // Primary key
+            $table->text('content');
+            $table->unsignedTinyInteger('rating'); // Rating, es. 1-5
+            $table->unsignedBigInteger('product_id')->nullable(); // Foreign key
+            $table->unsignedBigInteger('user_id')->nullable(); // Foreign key
             $table->timestamps();
+
+            // Foreign key constraints
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onDelete('set null');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
+
 
     /**
      * Reverse the migrations.
