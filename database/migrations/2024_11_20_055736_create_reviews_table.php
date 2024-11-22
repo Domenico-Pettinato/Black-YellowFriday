@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->id(); // Primary key
+            $table->id(); 
             $table->text('content');
             $table->unsignedTinyInteger('rating'); // Rating, es. 1-5
             $table->unsignedBigInteger('product_id')->nullable(); // Foreign key

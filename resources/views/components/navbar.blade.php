@@ -10,7 +10,6 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('products.create') }}">Inserisci Prodotto</a></li>
                 <li class="nav-item"><a class="nav-link" href="#offers">Offerte</a></li>
                 <li class="nav-item"><a class="nav-link" href="#reviews">Recensioni</a></li>
-                <li class="nav-item"><a class="btn btn-danger btn-sm" href="#countdown">Countdown</a></li>
             </ul>
         </div>
     </div>

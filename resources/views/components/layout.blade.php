@@ -30,8 +30,7 @@
 
         <div class="min-vh-100">
             <x-hero />
-        {{ $slot }}
-            
+            {{ $slot }}
             <x-special-offers />
             <x-reviews />
         </div>

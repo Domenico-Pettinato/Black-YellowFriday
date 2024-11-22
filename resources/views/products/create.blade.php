@@ -13,7 +13,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data" class="needs-validation">
+             <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data" class="needs-validation">
                 @csrf
 
                 <div class="mb-3">
@@ -37,9 +37,9 @@
                     <label for="category" class="form-label">Categoria</label>
                     <select name="category" id="category" class="form-select @error('category') is-invalid @enderror" required>
                         <option disabled {{ old('category') ? '' : 'selected' }}>Seleziona una categoria</option>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>
-                                {{ $category->name }}
+                        @foreach ($products as $product)
+                            <option value="{{ $product->id }}" {{ old('product') == $product->id ? 'selected' : '' }}>
+                                {{ $product->name }}
                             </option>
                         @endforeach
                     </select>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="body" class="form-label">Contenuto</label>
+                    <label for="body" class="form-label">Descrizione</label>
                     <textarea class="form-control @error('body') is-invalid @enderror" id="body" name="body" rows="4" required>{{ old('body') }}</textarea>
                     @error('body')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -62,7 +62,7 @@
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                </div>
+                </div> 
 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-outline-secondary btn-sm">Invia</button>

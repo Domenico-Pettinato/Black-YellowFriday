@@ -20,13 +20,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        $products = ['Smartphone', 'Tablet', 'Laptop', 'Smartwatch', 'Camera'];
+        // $products = ['Smartphone', 'Tablet', 'Laptop', 'Smartwatch', 'Camera'];
 
-        foreach ($products as $product) {
-          Product::create ([
-            'name' => $product,
-          ]);
-        }   
+        // foreach ($products as $product) {
+        //   Product::create ([
+        //     'name' => $product,
+        //   ]);
+        // }
     }
 
     /**
