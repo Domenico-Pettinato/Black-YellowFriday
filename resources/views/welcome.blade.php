@@ -14,7 +14,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
-    @endif
+    @endif                                
 
     <!-- Countdown -->
     <section class="text-center py-5 bg-black text-white">

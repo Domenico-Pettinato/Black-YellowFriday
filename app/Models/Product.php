@@ -10,7 +10,7 @@ class Product extends Model
 {
     use HasFactory, Notifiable;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'tag','category','description', 'price','image'];
 
     public function reviews()
     {

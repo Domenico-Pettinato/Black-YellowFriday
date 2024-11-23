@@ -22,7 +22,7 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('products.create');
     }
@@ -32,19 +32,32 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // Validazione del form
         $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'required|string',    
+            'description' => 'required|string',
             'price' => 'required|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        
-        Product::create($request->all());
-
-        return redirect('/')->route('welcome')->with([
-            'success' => 'Prodotto aggiunto con successo.'
-            
-        ]);
+    
+        // Creazione del prodotto
+        $product = new Product(); // Assumi che il tuo modello sia `Product`
+    
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+    
+        // Gestione del caricamento dell'immagine
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public'); // Salva l'immagine nella cartella "images" in storage/app/public
+            $product->image = $imagePath; // Salva il percorso dell'immagine nel database
+        }
+    
+        // Salvataggio del prodotto
+        $product->save();
+    
+        // Redirect con messaggio di successo
+        return redirect()->route('welcome')->with('success', 'Prodotto aggiunto con successo.');
     }
 
     /**

@@ -26,7 +26,7 @@ class ReviewSeeder extends Seeder
         foreach ($products as $product) {
 
             // Genera 2 recensioni in totale a caso per ciascun prodotto
-            for ($i = 0; $i < 2; $i++) {
+            for ($i = 0; $i < 1; $i++); {
                 
                 $randomProduct = $products->random();
 

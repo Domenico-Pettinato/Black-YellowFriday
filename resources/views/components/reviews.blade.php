@@ -7,8 +7,11 @@
                 @foreach ($product->reviews as $review)
                 <div class="col-md-6 mb-4">
                     <div class="bg-black p-4 shadow rounded">
-                        <h5 class="fw-bold text-danger">{{ $review->author }}</h5>
-                        <p class="mb-1"> Recensione per {{ $product->name }}: {{ $review->content }}</p>
+                        <p class="mb-1">
+                            Recensione per <span class="fw-bold">{{ $product->name }}</span>:<br>
+                            <h5 class="fw-bold text-danger">{{ $review->author }}</h5>
+                            {{ $review->content }}
+                        </p>
                         <p class="text-warning">Valutazione: {{ str_repeat('⭐', $review->rating) }}</p>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ route('products.create') }}">Inserisci Prodotto</a></li>
-                <li class="nav-item"><a class="nav-link" href="#offers">Offerte</a></li>
+                <li class="nav-item"><a class="nav-link" href="#offers">Visualizza Offerte</a></li>
                 <li class="nav-item"><a class="nav-link" href="#reviews">Recensioni</a></li>
             </ul>
         </div>
