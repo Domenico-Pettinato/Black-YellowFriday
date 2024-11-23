@@ -11,14 +11,15 @@ class Review extends Model
     use HasFactory, Notifiable;
 
     protected $fillable = [
+        'product_name',
         'content',
         'rating',
         'product_id',
         'user_id',
     ];
 
-    public function product()
+    public function user()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(User::class);
     }
 }

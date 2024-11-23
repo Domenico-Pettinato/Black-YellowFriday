@@ -9,29 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->id(); 
-            $table->text('content');
-            $table->unsignedTinyInteger('rating'); // Rating, es. 1-5
-            $table->unsignedBigInteger('product_id')->nullable(); // Foreign key
-            $table->unsignedBigInteger('user_id')->nullable(); // Foreign key
+            $table->id();
+            $table->unsignedBigInteger('product_id'); // ID del prodotto collegato
+            $table->string('product_name'); // Nome del prodotto
+            $table->string('author'); // Nome dell'autore
+            $table->text('content'); // Testo della recensione
+            $table->unsignedTinyInteger('rating'); // Voto (da 1 a 5)
             $table->timestamps();
 
-            // Foreign key constraints
-            $table->foreign('product_id')
-                ->references('id')
-                ->on('products')
-                ->onDelete('set null');
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+            // Chiave esterna per collegare le recensioni ai prodotti
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -41,3 +33,4 @@ return new class extends Migration
         Schema::dropIfExists('reviews');
     }
 };
+

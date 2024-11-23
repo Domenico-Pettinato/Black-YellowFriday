@@ -17,8 +17,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create();
-        Product::factory(10)->create();
-        Review::factory(10)->create();
+        // Esegui il ProductSeeder
+        $this->call(ProductSeeder::class);
+
+        // Esegui il ReviewSeeder
+        $this->call(ReviewSeeder::class);
+
     }
 }
