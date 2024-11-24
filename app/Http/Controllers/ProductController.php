@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,10 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
     {
-        return view('products.create');
+        $categories = Category::all();
+        return view('products.create', compact('categories'));
     }
 
     /**
@@ -41,7 +43,7 @@ class ProductController extends Controller
         ]);
     
         // Creazione del prodotto
-        $product = new Product(); // Assumi che il tuo modello sia `Product`
+        $product = new Product(); 
     
         $product->name = $request->input('name');
         $product->description = $request->input('description');
@@ -57,7 +59,7 @@ class ProductController extends Controller
         $product->save();
     
         // Redirect con messaggio di successo
-        return redirect()->route('welcome')->with('success', 'Prodotto aggiunto con successo.');
+        return redirect()->route('welcome')->with('message', 'Prodotto aggiunto con successo!');
     }
 
     /**

@@ -6,21 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Product extends Model
+class Category extends Model
 {
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'name', 
-        'tag',
-        'category',
-        'description', 
-        'price',
-        'image'
-    ];
+        'name',
+    ];  
 
-    public function reviews()
+    public function products()
     {
-        return $this->hasMany(Review::class);
+        return $this->hasMany(Product::class);
     }
 }

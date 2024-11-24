@@ -37,9 +37,9 @@
                     <label for="category" class="form-label">Categoria</label>
                     <select name="category" id="category" class="form-select @error('category') is-invalid @enderror" required>
                         <option disabled {{ old('category') ? '' : 'selected' }}>Seleziona una categoria</option>
-                        @foreach ($products as $product)
-                        <option value="{{ $product->id }}" {{ old('product') == $product->id ? 'selected' : '' }}>
-                            {{ $product->name }}
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>
+                            {{ $category->name }}
                         </option>
                         @endforeach
                     </select>
@@ -47,6 +47,7 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione</label>
@@ -74,7 +75,9 @@
 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-outline-secondary btn-sm">Invia</button>
+
                 </div>
+
             </form>
         </div>
     </div>
