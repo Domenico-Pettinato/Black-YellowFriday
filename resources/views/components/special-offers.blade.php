@@ -6,12 +6,7 @@
             <div class="col-md-4">
                 <div class="card border-0 shadow-lg mb-4" style="transition: transform 0.3s;">
                     <!-- Immagine del prodotto -->
-                    <img src="{{ $product->image && file_exists(public_path($product->image)) 
-                            ? asset($product->image) 
-                         : 'https://via.placeholder.com/300x200?text=No+Image' }}"
-                        class="card-img-top rounded"
-                        alt="{{ $product->name }}">
-
+                    <img src="/storage/{{ $product->image }}" class="card-img-top rounded-top" alt="Imagine del prodotto">
 
                     <div class="card-body bg-dark text-white text-center">
                         <!-- Nome del prodotto -->
