@@ -1,7 +1,6 @@
-<!-- Reviews -->
 <section id="reviews" class="py-5 bg-dark text-light">
     <div class="container">
-        <h2 class="text-center text-danger mb-5">⭐ Recensioni dei Clienti ⭐</h2>
+        <h2 class="text-center text-danger mb-1">⭐ Recensioni dei Clienti ⭐</h2>
         <div class="row">
             @foreach ($products as $product)
                 @foreach ($product->reviews as $review)

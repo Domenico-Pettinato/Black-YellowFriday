@@ -8,11 +8,10 @@ use Illuminate\Notifications\Notifiable;
 
 class Product extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
 
     protected $fillable = [
         'name', 
-        'tag',
         'category',
         'description', 
         'price',
@@ -22,5 +21,10 @@ class Product extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

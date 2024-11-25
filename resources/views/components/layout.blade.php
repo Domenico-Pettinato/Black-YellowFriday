@@ -1,3 +1,6 @@
+<!-- Utilizzo questa direttiva per passare le categorie al componente create -->
+@props(['categories'])
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -11,32 +14,20 @@
 <body class="bg-black text-white">
     <x-navbar />
     <main>
-        <h1 class="display-1 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 mt-5 fw-bold text-danger text-center">🔥 Black Friday</h1>
-
-        <!-- Barra di ricerca in stile Edge -->
-        <form action="{{ route('products.store') }}" method="GET" class="d-flex justify-content-center my-3" role="search">
-            <div class="input-group" style="max-width: 600px; width: 100%; position: relative;">
-                <input
-                    type="search"
-                    name="query"
-                    class="form-control"
-                    placeholder="Cerca tra gli articoli..."
-                    aria-label="Search"
-                    style="height: 45px; font-size: 1.4rem; border-radius: 25px 25px 0 0; padding-left: 35px; border-color: #4285f4;">
-                <!-- Icona della lente, posizionata dentro il campo di input -->
-                <i class="bi bi-search position-absolute" style="left: 10px; top: 43%; transform: translateY(-50%); color: #aaa;"></i>
-            </div>
-        </form>
+        <!-- <h1 class="display-1 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 mt-5 fw-bold text-danger text-center">🔥 Black Friday</h1> -->
 
         <div class="min-vh-100">
             <x-hero />
             {{ $slot }}
             <x-special-offers />
             <x-reviews />
+            <!-- Uso il componente create e passo le categorie popolate nel database -->
+            <x-create :categories="$categories" />
+            <x-scroll-top />
         </div>
-
     </main>
     <x-footer />
+    @stack('styles')
+    @stack('scripts')
 </body>
-
 </html>

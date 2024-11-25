@@ -13,20 +13,21 @@ class ProductController extends Controller
      */
     public function index()
     {
-       
-        $products = Product::all(); 
-        // dd($products);
-        return view('welcome', compact('products'));
-        
+        $categories = Category::all(); // Recupera tutte le categorie
+        //dd($categories);
+        $products = Product::all(); // Recupera tutti i prodotti
+
+        // Passa le variabili alla vista
+        return view('welcome', compact('categories', 'products'));
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('products.create', compact('categories'));
+        //
     }
 
     /**
@@ -41,23 +42,23 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-    
+
         // Creazione del prodotto
-        $product = new Product(); 
-    
+        $product = new Product();
+
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
-    
+
         // Gestione del caricamento dell'immagine
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('images', 'public'); // Salva l'immagine nella cartella "images" in storage/app/public
             $product->image = $imagePath; // Salva il percorso dell'immagine nel database
         }
-    
+
         // Salvataggio del prodotto
         $product->save();
-    
+
         // Redirect con messaggio di successo
         return redirect()->route('welcome')->with('message', 'Prodotto aggiunto con successo!');
     }

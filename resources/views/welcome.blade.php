@@ -1,4 +1,5 @@
-<x-layout>
+<!-- Sto passando la variabile categories al layout -->
+<x-layout :categories="$categories">
     <!-- Messaggio di errore -->
     @if (session('alert'))
     <div class="alert alert-danger text-center w-auto mx-auto my-3" style="max-width: 500px;">
