@@ -1,0 +1,4 @@
+.navbar {
+    position: relative;
+    transition: top 0.3s, background-color 0.3s;
+}

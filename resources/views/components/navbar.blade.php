@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
     <div class="container">
         <a class="navbar-brand fw-bold text-danger" href="#">🔥 Black Friday</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
