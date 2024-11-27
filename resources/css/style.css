@@ -1,4 +1,13 @@
-.navbar {
-    position: relative;
-    transition: top 0.3s, background-color 0.3s;
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+
 }
+
+
+.carousel img {
+    max-width: 20%; /* L'immagine si adatta al contenitore */
+    height: auto; /* Mantiene le proporzioni */
+    border-radius: 10px; /* Bordo arrotondato per le immagini */
+  }
+
