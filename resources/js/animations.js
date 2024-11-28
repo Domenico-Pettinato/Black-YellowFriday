@@ -1,3 +1,9 @@
+console.log("Script avviato");
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Animations.js caricato correttamente!");
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .zoom-in');
 
@@ -14,10 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animatedElements.forEach(element => {
         observer.observe(element);
+        console.log(element);
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        console.log("Animations.js caricato correttamente!");
-    });
+
     
 });

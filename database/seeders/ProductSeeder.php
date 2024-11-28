@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class ProductSeeder extends Seeder
 {
@@ -13,12 +14,13 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+
+        // Crea un'istanza di Faker in italiano
+        $faker = Faker::create('it_IT');
+
         $products = [
-            ['name' => 'Smartphone', 'description' => 'A modern smartphone', 'price' => 699.99],
-            ['name' => 'Tablet', 'description' => 'A lightweight tablet', 'price' => 499.99],
-            ['name' => 'Laptop', 'description' => 'A powerful laptop', 'price' => 999.99],
-            ['name' => 'Smartwatch', 'description' => 'A stylish smartwatch', 'price' => 199.99],
-            ['name' => 'Camera', 'description' => 'A high-quality camera', 'price' => 799.99],
+            ['name' => 'Panettone', 'description' => "{$faker->realText(100)}", 'price' => 19.99],
+            ['name' => 'Pandoro', 'description' => "{$faker->realText(100)}", 'price' => 9.99],
         ];
 
         foreach ($products as $product) {

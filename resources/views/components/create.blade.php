@@ -1,4 +1,4 @@
-<section id="create" class="text-center py-5 bg-black text-white">
+<section id="create" class="text-center py-5 bg-black text-white ">
     <div class="container-fluid mt-5 d-flex justify-content-center">
         <div class="col-12 col-md-4 col-lg-4">
             <h2 class="text-center text-danger mb-4">Inserisci Prodotto</h2>
