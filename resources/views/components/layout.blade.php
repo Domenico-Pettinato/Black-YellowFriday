@@ -7,6 +7,7 @@
     <title>Impastando.it - Black Friday Blitz!</title>
     <!-- Includi gli asset con Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('styles') <!-- Per eventuali stili aggiuntivi -->
 </head>
 
 <body class="bg-black text-white">
@@ -15,17 +16,15 @@
         <div class="min-vh-100">
             <x-hero />
             {{ $slot }}
-            <x-carousel />
             <x-special-offers />
-            <!-- Passaggio delle categorie al componente -->
             <x-create :categories="$categories" />
             <x-reviews />
-            <x-scroll-top />
         </div>
     </main>
     <x-footer />
-
-  
+    <x-scroll-top /> <!-- "Torna su" -->
+    @stack('scripts') <!-- Per eventuali script aggiuntivi -->
 </body>
 </html>
+
 

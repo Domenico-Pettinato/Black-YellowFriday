@@ -10,10 +10,12 @@
         <p class="lead fade-in" style="animation-delay: 0.6s;">
             Speciale <strong>Black Friday</strong>: tutto il portale è dedicato alla vendita di Panettoni e Pandoro artigianali per il tuo Natale!
         </p>
-
+       
+<x-carousel />
+      
         <!-- Descrizione con animazioni progressive -->
-        <div class="description mt-4 ">
-            <h3 class="text-warning slide-up text-center" style="animation-delay: 0.8s;">Perché scegliere i nostri panettoni?</h3>
+        <div class="description mt-5">
+            <h3 class="text-warning slide-up text-center" style="animation-delay: 0.8s;">Perché scegliere i nostri panettoni....</h3>
             <p class="fade-in" style="animation-delay: 1s;">
                 Impastando è il luogo dove la passione per l'artigianato culinario incontra la tradizione. Ogni prodotto in vendita è realizzato con amore da utenti verificati che condividono il loro talento. Per il Black Friday, il portale si trasforma in una vetrina esclusiva di Panettoni e Pandoro fatti a mano.
             </p>
