@@ -3,11 +3,103 @@
     object-fit: cover;
 
 }
-
-
 .carousel img {
-    max-width: 20%; /* L'immagine si adatta al contenitore */
+    max-width: 30%; /* L'immagine si adatta al contenitore */
     height: auto; /* Mantiene le proporzioni */
     border-radius: 10px; /* Bordo arrotondato per le immagini */
   }
+
+  /* Hero-section  */
+
+    .hero-section {
+        position: relative;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-section h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-section .description {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-align: left;
+        margin-top: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-section .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+    
+    .hero-section h3 {
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Keyframes per fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes per slide-up */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes per zoom-in */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Classi di animazione */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s ease-out forwards;
+}
+
+.slide-up {
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards;
+}
+
+.zoom-in {
+    opacity: 0;
+    animation: zoomIn 1s ease-out forwards;
+}
+
+    
+
+
+
+
+
+
 
