@@ -3,10 +3,10 @@
         <h2 class="text-center text-danger mb-5">🔥 Offerte Speciali 🔥</h2>
         <div class="row">
             @foreach ($products as $product)
-            <div class="col-md-4">
-                <div class="card border-0 bg-black p-2 shadow rounded" style="transition: transform 0.3s;">
+            <div class="col-md-4 d-flex">
+                <div class="card border-0 bg-black p-2 mb-2 shadow rounded " style="transition: transform 0.3s;">
                     <!-- Immagine del prodotto -->
-                    <img src="/storage/{{ $product->image }}" class="card-img-top rounded-top" alt="Imagine del prodotto">
+                    <img src="/storage/{{ $product->image }}" class="card-img-top rounded-top product-img" alt="Immagine del prodotto">
 
                     <div class="card-body bg-dark text-white text-center">
                         <!-- Nome del prodotto -->
@@ -23,7 +23,7 @@
                         </p>
 
                         <!-- Bottone -->
-                        <button class="btn btn-outline-light btn-sm">
+                        <button class="btn btn-outline-light btn-sm btn-top mt-1 buyButton">
                             Acquista Ora
                         </button>
                     </div>

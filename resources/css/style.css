@@ -1,3 +1,97 @@
+/* Icona del carrello */
+
+#cartButton {
+    position: relative;
+    display: inline-block;
+}
+
+#cartItemCount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+
+/* sezione cart */
+
+#cartButton {
+    position: relative;
+    display: inline-block;
+}
+
+#cartItemCount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+
+.cart-pop-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: popUpAnimation 0.5s ease-out;
+}
+
+@keyframes popUpAnimation {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Posizione del pulsante di scorrimento */
+#scrollTopButton {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    z-index: 1000;
+    padding: 15px;
+    /* border: 3px solid white; */
+    border-radius: 50%;
+    /* background-color: #e63900; */
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+/* Effetto hover sul pulsante */
+#scrollTopButton:hover {
+    transform: scale(1.1);
+    /* Ingrandisce il pulsante al passaggio del mouse */
+    background-color: #e63900;
+    /* Colore rosso scuro */
+}
+
+/* Modifica della dimensione dell'icona */
+#scrollTopButton i {
+    font-size: 20px;
+    /* Dimensione dell'icona */
+}
+
+
+/* impostazioni del carosello */
 .carousel-inner img {
     height: 500px;
     object-fit: cover;
@@ -8,6 +102,28 @@
     height: auto; /* Mantiene le proporzioni */
     border-radius: 10px; /* Bordo arrotondato per le immagini */
   }
+
+  /* hover delle immagini */
+ 
+.card-img-top {
+    transition: transform 0.3s ease-in-out; /* Animazione fluida */
+}
+
+.card-img-top:hover {
+    transform: scale(1.1); /* Aumenta le dimensioni dell'immagine */
+}
+
+/* hover del tasto acquista */
+
+.btn-top {
+    transition: transform 0.3s ease-in-out; /* Animazione fluida */
+}
+
+.btn-top:hover {
+    transform: scale(1.1); /* Aumenta le dimensioni dell'immagine */
+}
+
+
 
   /* Hero-section  */
 
@@ -79,7 +195,7 @@
     }
 }
 
-/* Classi di animazione */
+/* Stile per le animazione */
 .fade-in {
     opacity: 0;
     animation: fadeIn 3s ease-out forwards;

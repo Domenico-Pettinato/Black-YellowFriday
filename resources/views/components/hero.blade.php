@@ -1,5 +1,5 @@
 <div class="hero-section text-center py-5 mt-5"
-    style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1920x600?text=IMPASTANDO') no-repeat center; background-size: cover;">
+    style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1920x600?text=Impastando.it') no-repeat center; background-size: cover;">
     <div class="container text-light">
         <!-- Titolo animato -->
         <h1 class="display-3 fw-bold text-danger fade-in" style="animation-delay: 0.2s;">🔥 Speciale Black Friday 2024!</h1>
